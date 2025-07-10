@@ -37,6 +37,12 @@
         .slider-item {scroll-snap-align: center;}
         .glass-halo {background: rgba(255, 255, 255, 0.25); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.18); box-shadow: 0 0 20px rgba(255, 255, 255, 0.2); transition: all 0.3s ease-in-out;}
         .glass-halo:hover {background: rgba(255, 255, 255, 0.4); box-shadow: 0 0 25px rgba(255, 255, 255, 0.3); transform: translateY(-4px);}
+        
+        /* --- استایل جدید برای بوردر شیشه‌ای پروفایل --- */
+        .profile-image-border {
+            border: 2px solid rgba(255, 255, 255, 0.4); /* بوردر نیمه شفاف */
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3); /* هاله نوری برای حس شیشه‌ای */
+        }
 
         /* --- Utility Classes (Generated from Tailwind) --- */
         .absolute {position: absolute;}
@@ -64,10 +70,8 @@
         .space-y-4 > :not([hidden]) ~ :not([hidden]) {margin-top: 1rem;}
         .rounded-full {border-radius: 9999px;}
         .rounded-xl {border-radius: 0.75rem;}
-        .bg-white\/30 {background-color: rgba(255, 255, 255, 0.3);}
         .bg-white\/60 {background-color: rgba(255, 255, 255, 0.6);}
         .object-cover {object-fit: cover;}
-        .p-1 {padding: 0.25rem;}
         .p-2 {padding: 0.5rem;}
         .p-4 {padding: 1rem;}
         .p-6 {padding: 1.5rem;}
@@ -113,14 +117,12 @@
     <main class="w-full max-w-md mx-auto text-center py-12">
         <!-- بخش پروفایل -->
         <header class="flex flex-col items-center mb-8">
-            <!-- کادر شیشه‌ای دور عکس -->
-            <div class="w-32 h-32 rounded-full p-1 bg-white/30 backdrop-blur-sm mb-4">
-                <img src="https://uploadkon.ir/uploads/93f110_25IMG-20250707-092544.jpg"
-                    alt="عکس پروفایل" 
-                    class="w-full h-full rounded-full object-cover"
-                    onerror="this.onerror=null;this.src='https://placehold.co/128x128/cccccc/ffffff?text=Error';"
-                >
-            </div>
+            <!-- عکس پروفایل با بوردر شیشه‌ای جدید -->
+            <img src="https://uploadkon.ir/uploads/93f110_25IMG-20250707-092544.jpg"
+                alt="عکس پروفایل" 
+                class="w-32 h-32 rounded-full object-cover profile-image-border mb-4"
+                onerror="this.onerror=null;this.src='https://placehold.co/128x128/cccccc/ffffff?text=Error';"
+            >
             <h1 class="text-2xl font-bold text-stone-800">خانواده امید فارس</h1>
             <p class="mt-4 text-base font-bold text-stone-700">باشگاه رشد هنر و اندیشه نوجوان 🧡</p>
             <p class="mt-4 text-base font-bold text-stone-700 px-4 leading-relaxed">
