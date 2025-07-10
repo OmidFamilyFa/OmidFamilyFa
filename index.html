@@ -10,15 +10,24 @@
     <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&amp;display=swap'>
     <script src='https://unpkg.com/@phosphor-icons/web'></script>
 
-    <!-- 
-      کدهای CSS بهینه‌سازی و از قبل تولید شده‌اند.
-      اسکریپت Tailwind CDN حذف شده تا سرعت بارگذاری به حداکثر برسد.
-    -->
+    <!-- کدهای CSS بهینه‌سازی شده -->
     <style>
         /* --- Preflight (Reset Styles) --- */
         *,::before,::after {box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb}
         html {line-height: 1.5; -webkit-text-size-adjust: 100%; -moz-tab-size: 4; tab-size: 4; font-family: 'Vazirmatn', sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;}
-        body {margin: 0; line-height: inherit; font-family: 'Vazirmatn', sans-serif; background: linear-gradient(to bottom right, #fed7aa, #fb923c, #f97316); color: #44403c;}
+        body {
+            margin: 0; 
+            line-height: inherit; 
+            font-family: 'Vazirmatn', sans-serif; 
+            /* --- گرادینت جدید الهام گرفته از تصاویر --- */
+            background-color: #fffbeb; /* رنگ پس‌زمینه جایگزین */
+            background-image: 
+                radial-gradient(at 15% 20%, #fde68a 0px, transparent 50%),
+                radial-gradient(at 80% 15%, #fed7aa 0px, transparent 50%),
+                radial-gradient(at 20% 85%, #fb923c 0px, transparent 50%),
+                radial-gradient(at 90% 85%, #f97316 0px, transparent 50%);
+            color: #44403c; /* رنگ متن اصلی */
+        }
         h1,h2,p,a {margin: 0; padding: 0;}
         img {display: block; vertical-align: middle; max-width: 100%; height: auto;}
         a {color: inherit; text-decoration: inherit;}
@@ -30,7 +39,7 @@
         .glass-halo {background: rgba(255, 255, 255, 0.25); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.18); box-shadow: 0 0 20px rgba(255, 255, 255, 0.2); transition: all 0.3s ease-in-out;}
         .glass-halo:hover {background: rgba(255, 255, 255, 0.4); box-shadow: 0 0 25px rgba(255, 255, 255, 0.3); transform: translateY(-4px);}
 
-        /* --- Utility Classes --- */
+        /* --- Utility Classes (Generated from Tailwind) --- */
         .absolute {position: absolute;}
         .relative {position: relative;}
         .left-2 {left: 0.5rem;}
@@ -74,10 +83,7 @@
         .leading-relaxed {line-height: 1.625;}
         .text-stone-700 {color: #44403c;}
         .text-stone-800 {color: #292524;}
-        .text-amber-900 {color: #78350f;}
         .text-orange-800 {color: #9a3412;}
-        .text-orange-900 {color: #7c2d12;}
-        .text-orange-500 {color: #f97316;}
         .text-orange-600 {color: #ea580c;}
         .hover\:text-green-600:hover {color: #16a34a;}
         .hover\:text-orange-500:hover {color: #f97316;}
