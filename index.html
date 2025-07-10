@@ -2,155 +2,270 @@
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
+    <title>خانواده امید فارس</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>لینک در بیو - نام شما</title>
     
-    <!-- Tailwind CSS CDN -->
+    <!-- کتابخانه‌های خارجی -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts: Vazirmatn -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
-    
-    <!-- Phosphor Icons CDN -->
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&amp;display=swap'>
+    <script src='https://unpkg.com/@phosphor-icons/web'></script>
 
+    <!-- 
+      کدهای CSS بهینه‌سازی و از قبل تولید شده‌اند.
+      اسکریپت Tailwind CDN حذف شده تا سرعت بارگذاری به حداکثر برسد.
+    -->
     <style>
-        body {
-            font-family: 'Vazirmatn', sans-serif;
-        }
-        /* استایل برای اسلایدر */
-        .slider-container {
-            scroll-snap-type: x mandatory;
-            scroll-behavior: smooth;
-            -webkit-overflow-scrolling: touch;
-        }
-        .slider-item {
-            scroll-snap-align: center;
-        }
+        /* --- Preflight (Reset Styles) --- */
+        *,::before,::after {box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb}
+        html {line-height: 1.5; -webkit-text-size-adjust: 100%; -moz-tab-size: 4; tab-size: 4; font-family: 'Vazirmatn', sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;}
+        body {margin: 0; line-height: inherit; font-family: 'Vazirmatn', sans-serif; background: linear-gradient(to bottom right, #fed7aa, #fb923c, #f97316); color: #44403c;}
+        h1,h2,p,a {margin: 0; padding: 0;}
+        img {display: block; vertical-align: middle; max-width: 100%; height: auto;}
+        a {color: inherit; text-decoration: inherit;}
+        button {background-color: transparent; background-image: none; padding: 0; line-height: inherit; color: inherit; font-family: inherit; font-size: 100%;}
+        
+        /* --- Custom Styles --- */
+        .slider-container {scroll-snap-type: x mandatory; scroll-behavior: smooth; -webkit-overflow-scrolling: touch;}
+        .slider-item {scroll-snap-align: center;}
+        .glass-halo {background: rgba(255, 255, 255, 0.25); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.18); box-shadow: 0 0 20px rgba(255, 255, 255, 0.2); transition: all 0.3s ease-in-out;}
+        .glass-halo:hover {background: rgba(255, 255, 255, 0.4); box-shadow: 0 0 25px rgba(255, 255, 255, 0.3); transform: translateY(-4px);}
+
+        /* --- Utility Classes --- */
+        .absolute {position: absolute;}
+        .relative {position: relative;}
+        .left-2 {left: 0.5rem;}
+        .right-2 {right: 0.5rem;}
+        .top-1\/2 {top: 50%;}
+        .-translate-y-1\/2 {transform: translateY(-50%);}
+        .mb-3 {margin-bottom: 0.75rem;}
+        .mb-4 {margin-bottom: 1rem;}
+        .mb-6 {margin-bottom: 1.5rem;}
+        .mb-8 {margin-bottom: 2rem;}
+        .mb-12 {margin-bottom: 3rem;}
+        .mt-4 {margin-top: 1rem;}
+        .mx-auto {margin-left: auto; margin-right: auto;}
+        .flex {display: flex;}
+        .min-h-screen {min-height: 100vh;}
+        .w-full {width: 100%;}
+        .max-w-md {max-width: 28rem;}
+        .flex-col {flex-direction: column;}
+        .items-center {align-items: center;}
+        .justify-center {justify-content: center;}
+        .space-y-4 > :not([hidden]) ~ :not([hidden]) {margin-top: 1rem;}
+        .rounded-full {border-radius: 9999px;}
+        .rounded-xl {border-radius: 0.75rem;}
+        .border-4 {border-width: 4px;}
+        .border-white {border-color: #fff;}
+        .bg-white\/60 {background-color: rgba(255, 255, 255, 0.6);}
+        .object-cover {object-fit: cover;}
+        .p-2 {padding: 0.5rem;}
+        .p-4 {padding: 1rem;}
+        .p-6 {padding: 1.5rem;}
+        .py-4 {padding-top: 1rem; padding-bottom: 1rem;}
+        .py-12 {padding-top: 3rem; padding-bottom: 3rem;}
+        .px-4 {padding-left: 1rem; padding-right: 1rem;}
+        .px-6 {padding-left: 1.5rem; padding-right: 1.5rem;}
+        .text-center {text-align: center;}
+        .text-base {font-size: 1rem; line-height: 1.5rem;}
+        .text-xl {font-size: 1.25rem; line-height: 1.75rem;}
+        .text-2xl {font-size: 1.5rem; line-height: 2rem;}
+        .text-4xl {font-size: 2.25rem; line-height: 2.5rem;}
+        .font-bold {font-weight: 700;}
+        .leading-relaxed {line-height: 1.625;}
+        .text-stone-700 {color: #44403c;}
+        .text-stone-800 {color: #292524;}
+        .text-amber-900 {color: #78350f;}
+        .text-orange-800 {color: #9a3412;}
+        .text-orange-900 {color: #7c2d12;}
+        .text-orange-500 {color: #f97316;}
+        .text-orange-600 {color: #ea580c;}
+        .hover\:text-green-600:hover {color: #16a34a;}
+        .hover\:text-orange-500:hover {color: #f97316;}
+        .hover\:text-sky-500:hover {color: #0ea5e9;}
+        .hover\:text-pink-500:hover {color: #ec4899;}
+        .hover\:text-orange-600:hover {color: #ea580c;}
+        .hover\:bg-white\/80:hover {background-color: rgba(255, 255, 255, 0.8);}
+        .backdrop-blur-sm {backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);}
+        .transition {transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter; backdrop-filter: blur(0); transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms;}
+        .overflow-x-auto {overflow-x: auto;}
+        .flex-shrink-0 {flex-shrink: 0;}
+        .snap-x {scroll-snap-type: x var(--tw-scroll-snap-strictness);}
+        .snap-mandatory {--tw-scroll-snap-strictness: mandatory;}
+        .snap-center {scroll-snap-align: center;}
+        .container {width: 100%;}
+        @media (min-width: 640px) {.container {max-width: 640px;}}
+        @media (min-width: 768px) {.container {max-width: 768px;}}
+        @media (min-width: 1024px) {.container {max-width: 1024px;}}
+        @media (min-width: 1280px) {.container {max-width: 1280px;}}
+        @media (min-width: 1536px) {.container {max-width: 1536px;}}
     </style>
 </head>
-<body class="bg-gradient-to-br from-gray-100 to-gray-300 dark:from-gray-800 dark:to-gray-900 text-gray-800 dark:text-gray-200">
+<body>
 
-    <div class="container mx-auto p-4 flex flex-col items-center justify-center">
-        
-        <main class="w-full max-w-md mx-auto text-center py-12">
-            
-            <!-- بخش پروفایل -->
-            <header class="flex flex-col items-center mb-8">
-                <img 
-                    src="https://placehold.co/128x128/7c3aed/ffffff?text=Profile" 
-                    alt="عکس پروفایل" 
-                    class="w-32 h-32 rounded-full object-cover border-4 border-white dark:border-gray-700 shadow-lg mb-4"
-                    onerror="this.onerror=null;this.src='https://placehold.co/128x128/cccccc/ffffff?text=Error';"
-                >
-                <h1 class="text-3xl font-bold text-gray-900 dark:text-white">نام شما</h1>
-                <p class="mt-2 text-md text-gray-600 dark:text-gray-400">یک توضیح کوتاه درباره خودتان یا کسب و کارتان.</p>
-            </header>
+<div class="container mx-auto p-4 flex flex-col items-center justify-center min-h-screen">
+    <main class="w-full max-w-md mx-auto text-center py-12">
+        <!-- بخش پروفایل -->
+        <header class="flex flex-col items-center mb-8">
+            <img src="https://iili.io/Fcmf6GV.md.jpg"
+                alt="عکس پروفایل" 
+                class="w-32 h-32 rounded-full object-cover border-4 border-white mb-4"
+                onerror="this.onerror=null;this.src='https://placehold.co/128x128/cccccc/ffffff?text=Error';"
+            >
+            <h1 class="text-2xl font-bold text-stone-800">خانواده امید فارس</h1>
+            <p class="mt-4 text-base font-bold text-stone-700">باشگاه رشد هنر و اندیشه نوجوان 🧡</p>
+            <p class="mt-4 text-base font-bold text-stone-700 px-4 leading-relaxed">
+                از نوجوان | با نوجوان | برای نوجوان 🌱
+                <br>
+                آموزش، تولید و رویدادهای خلاقانه 🪄
+                <br>
+                مهم اینه که عاشق هنر باشی 💪🏻
+            </p>
+        </header>
 
-            <!-- بخش لینک‌ها -->
-            <section class="w-full mb-12">
-                <div class="space-y-4">
-                    <a href="#" target="_blank" class="block w-full bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 text-gray-800 dark:text-white font-semibold py-4 px-6 rounded-xl shadow-md transition-transform transform hover:-translate-y-1">
-                        وب‌سایت شخصی
-                    </a>
-                    <a href="#" target="_blank" class="block w-full bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 text-gray-800 dark:text-white font-semibold py-4 px-6 rounded-xl shadow-md transition-transform transform hover:-translate-y-1">
-                        فروشگاه آنلاین
-                    </a>
-                    <a href="#" target="_blank" class="block w-full bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 text-gray-800 dark:text-white font-semibold py-4 px-6 rounded-xl shadow-md transition-transform transform hover:-translate-y-1">
-                        پروژه‌ها در گیت‌هاب
-                    </a>
-                    <a href="#" target="_blank" class="block w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-4 px-6 rounded-xl shadow-lg transition-transform transform hover:-translate-y-1">
-                        عضویت در خبرنامه
-                    </a>
+        <!-- بخش لینک‌ها -->
+        <section class="w-full mb-12">
+            <h2 class="text-xl font-bold text-stone-800 mb-6">صفحات‌مجازی‌مون</h2>
+            <div class="space-y-4">
+                <a href="https://ble.ir/Safhe_design" target="_blank" class="block w-full glass-halo text-stone-800 hover:text-green-600 text-base font-bold py-4 px-6 rounded-xl">
+                    بله
+                </a>
+                <a href="https://eitaa.com/Safhe_design" target="_blank" class="block w-full glass-halo text-stone-800 hover:text-orange-500 text-base font-bold py-4 px-6 rounded-xl">
+                    ایتا
+                </a>
+                <a href="https://t.me/Safhe_design" target="_blank" class="block w-full glass-halo text-stone-800 hover:text-sky-500 text-base font-bold py-4 px-6 rounded-xl">
+                    تلگرام
+                </a>
+                <a href="https://instagram.com/safhe_design" target="_blank" class="block w-full glass-halo text-stone-800 hover:text-pink-500 text-base font-bold py-4 px-6 rounded-xl">
+                    اینستاگرام
+                </a>
+            </div>
+        </section>
+
+        <!-- بخش جدید پاتوق‌ها -->
+        <section class="w-full mb-12">
+            <h2 class="text-xl font-bold text-stone-800 mb-6">پاتوق‌هامون</h2>
+            <div class="space-y-4">
+                <a href="#" target="_blank" class="block w-full glass-halo text-stone-800 hover:text-orange-600 text-base font-bold py-4 px-6 rounded-xl">
+                    صفحه | پاتوق گرافیک نوجوان
+                </a>
+                <a href="#" target="_blank" class="block w-full glass-halo text-stone-800 hover:text-orange-600 text-base font-bold py-4 px-6 rounded-xl">
+                    آفتاب | پاتوق پادکست نوجوان
+                </a>
+                <a href="#" target="_blank" class="block w-full glass-halo text-stone-800 hover:text-orange-600 text-base font-bold py-4 px-6 rounded-xl">
+                    پرگار | پاتوق شعر نوجوان
+                </a>
+                <a href="#" target="_blank" class="block w-full glass-halo text-stone-800 hover:text-orange-600 text-base font-bold py-4 px-6 rounded-xl">
+                    کلمه | پاتوق نویسندگی نوجوان
+                </a>
+                <a href="#" target="_blank" class="block w-full glass-halo text-stone-800 hover:text-orange-600 text-base font-bold py-4 px-6 rounded-xl">
+                    سینما تربیت
+                </a>
+            </div>
+        </section>
+
+        <!-- بخش آخرین رویدادها (اسلایدر) -->
+        <section class="w-full mb-12">
+            <h2 class="text-xl font-bold text-stone-800 mb-6">آخرین رویدادها</h2>
+            <div class="relative">
+                <div id="slider" class="slider-container flex overflow-x-auto snap-x snap-mandatory rounded-xl">
+                    <img src="https://iili.io/FcmU57a.md.jpg" alt="رویداد ۱" class="slider-item w-full flex-shrink-0 snap-center object-cover">
+                    <img src="https://iili.io/FcmaWJa.md.jpg" alt="رویداد ۲" class="slider-item w-full flex-shrink-0 snap-center object-cover">
+                    <img src="https://iili.io/Fcp2vnV.md.jpg" alt="رویداد ۳" class="slider-item w-full flex-shrink-0 snap-center object-cover">
+                    <img src="https://iili.io/FcyuZga.md.jpg" alt="رویداد ۴" class="slider-item w-full flex-shrink-0 snap-center object-cover">
+                    <img src="https://iili.io/FcylXMQ.md.jpg" alt="رویداد ۵" class="slider-item w-full flex-shrink-0 snap-center object-cover">
                 </div>
-            </section>
+                <button id="prevBtn" class="absolute top-1/2 left-2 -translate-y-1/2 bg-white/60 backdrop-blur-sm rounded-full p-2 text-orange-600 hover:bg-white/80 transition">
+                    <i class="ph ph-caret-left text-2xl"></i>
+                </button>
+                <button id="nextBtn" class="absolute top-1/2 right-2 -translate-y-1/2 bg-white/60 backdrop-blur-sm rounded-full p-2 text-orange-600 hover:bg-white/80 transition">
+                    <i class="ph ph-caret-right text-2xl"></i>
+                </button>
+            </div>
+        </section>
 
-            <!-- بخش آخرین رویدادها (اسلایدر) -->
-            <section class="w-full mb-12">
-                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">آخرین رویدادها</h2>
-                <div class="relative">
-                    <!-- محفظه اسلایدها -->
-                    <div id="slider" class="slider-container flex overflow-x-auto snap-x snap-mandatory rounded-xl shadow-lg">
-                        <!-- 
-                            برای تغییر تصاویر، آدرس عکس‌های خود را
-                            جایگزین مقادیر src کنید.
-                        -->
-                        <img src="https://placehold.co/600x400/a78bfa/ffffff?text=Event+1" alt="رویداد ۱" class="slider-item w-full flex-shrink-0 snap-center object-cover">
-                        <img src="https://placehold.co/600x400/818cf8/ffffff?text=Event+2" alt="رویداد ۲" class="slider-item w-full flex-shrink-0 snap-center object-cover">
-                        <img src="https://placehold.co/600x400/f472b6/ffffff?text=Event+3" alt="رویداد ۳" class="slider-item w-full flex-shrink-0 snap-center object-cover">
-                        <img src="https://placehold.co/600x400/fb923c/ffffff?text=Event+4" alt="رویداد ۴" class="slider-item w-full flex-shrink-0 snap-center object-cover">
-                        <img src="https://placehold.co/600x400/4ade80/ffffff?text=Event+5" alt="رویداد ۵" class="slider-item w-full flex-shrink-0 snap-center object-cover">
-                    </div>
-                    <!-- دکمه‌های کنترل اسلایدر -->
-                    <button id="prevBtn" class="absolute top-1/2 left-2 -translate-y-1/2 bg-white/50 backdrop-blur-sm rounded-full p-2 text-gray-800 hover:bg-white transition">
-                        <i class="ph ph-caret-left text-2xl"></i>
-                    </button>
-                    <button id="nextBtn" class="absolute top-1/2 right-2 -translate-y-1/2 bg-white/50 backdrop-blur-sm rounded-full p-2 text-gray-800 hover:bg-white transition">
-                        <i class="ph ph-caret-right text-2xl"></i>
-                    </button>
-                </div>
-            </section>
+        <!-- بخش موقعیت مکانی -->
+        <footer class="w-full">
+             <h2 class="text-xl font-bold text-stone-800 mb-4">آدرس‌مون</h2>
+             <div class="flex flex-col items-center glass-halo p-6 rounded-xl">
+                 <i class="ph-bold ph-map-pin-line text-4xl text-orange-600 mb-3"></i>
+                 <p class="text-base font-bold text-stone-800">
+                    بلوار فرصت شیرازی (پودونک)، خیابان استاد شهریار،‌ تقاطع اقبال لاهوری، پردیس هنر و اندیشه ره‌آوین (فرهنگسرای رسانه)
+                 </p>
+             </div>
+        </footer>
+    </main>
+</div>
 
-            <!-- بخش موقعیت مکانی -->
-            <footer class="w-full">
-                 <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">موقعیت مکانی</h2>
-                 <div class="flex flex-col items-center bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md">
-                     <i class="ph-bold ph-map-pin-line text-4xl text-purple-600 dark:text-purple-400 mb-3"></i>
-                     <p class="text-gray-700 dark:text-gray-300 font-medium">
-                        <!-- آدرس خود را اینجا وارد کنید -->
-                        تهران، خیابان آزادی، پلاک ۱۲۳، طبقه ۴
-                     </p>
-                 </div>
-            </footer>
-
-        </main>
-    </div>
-
-    <script>
+<!-- کدهای JavaScript در اینجا قرار می‌گیرند -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
         const slider = document.getElementById('slider');
         const nextBtn = document.getElementById('nextBtn');
         const prevBtn = document.getElementById('prevBtn');
-        let slideWidth = slider.clientWidth;
-        let currentSlide = 0;
-        const totalSlides = slider.children.length;
+        
+        if (!slider || !nextBtn || !prevBtn) return;
 
-        // تابع برای نمایش اسلاید مشخص
-        function goToSlide(slideIndex) {
-            if (slideIndex < 0) {
-                slideIndex = totalSlides - 1;
-            } else if (slideIndex >= totalSlides) {
-                slideIndex = 0;
-            }
+        const slides = Array.from(slider.children);
+        const totalSlides = slides.length;
+        if (totalSlides === 0) return;
+
+        let currentSlideIndex = 0;
+        let autoSlideInterval;
+
+        function goToSlide(index) {
+            currentSlideIndex = index;
+            const slideWidth = slider.clientWidth;
             slider.scrollTo({
-                left: slideIndex * slideWidth,
+                left: currentSlideIndex * slideWidth,
                 behavior: 'smooth'
             });
-            currentSlide = slideIndex;
         }
 
-        // رویداد کلیک برای دکمه بعدی
+        function startAutoSlide() {
+            clearInterval(autoSlideInterval);
+            autoSlideInterval = setInterval(() => {
+                const nextIndex = (currentSlideIndex + 1) % totalSlides;
+                goToSlide(nextIndex);
+            }, 5000);
+        }
+
         nextBtn.addEventListener('click', () => {
-            goToSlide(currentSlide + 1);
+            const nextIndex = (currentSlideIndex + 1) % totalSlides;
+            goToSlide(nextIndex);
+            startAutoSlide();
         });
 
-        // رویداد کلیک برای دکمه قبلی
         prevBtn.addEventListener('click', () => {
-            goToSlide(currentSlide - 1);
+            const prevIndex = (currentSlideIndex - 1 + totalSlides) % totalSlides;
+            goToSlide(prevIndex);
+            startAutoSlide();
         });
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const newIndex = slides.indexOf(entry.target);
+                    if (newIndex !== currentSlideIndex) {
+                       currentSlideIndex = newIndex;
+                       startAutoSlide();
+                    }
+                }
+            });
+        }, { threshold: 0.7 });
 
-        // به‌روزرسانی عرض اسلاید در صورت تغییر اندازه پنجره
+        slides.forEach(slide => observer.observe(slide));
+
         window.addEventListener('resize', () => {
-            slideWidth = slider.clientWidth;
-            goToSlide(currentSlide); // برای تنظیم مجدد موقعیت اسکرول
+            const slideWidth = slider.clientWidth;
+            slider.scrollTo({
+                left: currentSlideIndex * slideWidth,
+                behavior: 'instant' 
+            });
         });
 
-        // اسلاید خودکار
-        setInterval(() => {
-            goToSlide(currentSlide + 1);
-        }, 5000); // هر ۵ ثانیه اسلاید عوض می‌شود
+        startAutoSlide();
+    });
+</script>
 
-    </script>
 </body>
 </html>
