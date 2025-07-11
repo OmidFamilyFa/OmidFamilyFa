@@ -7,276 +7,119 @@
     
     <!-- کتابخانه‌های خارجی -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&amp;display=swap'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&amp;display=swap'>
     <script src='https://unpkg.com/@phosphor-icons/web'></script>
 
-    <!-- کدهای CSS بهینه‌سازی شده -->
+    <!-- کدهای CSS -->
     <style>
-        /* --- Preflight (Reset Styles) --- */
-        *,::before,::after {box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb}
-        html {line-height: 1.5; -webkit-text-size-adjust: 100%; -moz-tab-size: 4; tab-size: 4; font-family: 'Vazirmatn', sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;}
         body {
-            margin: 0; 
-            line-height: inherit; 
-            font-family: 'Vazirmatn', sans-serif; 
-            /* --- گرادینت جدید با رنگ غالب نارنجی --- */
-            background-color: #ffedd5; /* Fallback color (orange-100) */
-            background-image: 
-                radial-gradient(at 20% 15%, #fed7aa 0px, transparent 50%), /* Peach */
-                radial-gradient(at 75% 25%, #fb923c 0px, transparent 50%), /* Orange */
-                radial-gradient(at 10% 90%, #fca5a5 0px, transparent 50%), /* Soft Red/Orange */
-                radial-gradient(at 85% 85%, #fdba74 0px, transparent 50%); /* Lighter Orange */
-            color: #44403c; 
+            font-family: 'Vazirmatn', sans-serif;
+            background-color: #F5E8B7; /* رنگ پس‌زمینه */
+            color: #5D4037; /* رنگ متن اصلی (قهوه‌ای تیره) */
         }
-        h1,h2,p,a {margin: 0; padding: 0;}
-        img {display: block; vertical-align: middle; max-width: 100%; height: auto;}
-        a {color: inherit; text-decoration: inherit;}
-        button {background-color: transparent; background-image: none; padding: 0; line-height: inherit; color: inherit; font-family: inherit; font-size: 100%;}
         
-        /* --- Custom Styles --- */
-        .slider-container {scroll-snap-type: x mandatory; scroll-behavior: smooth; -webkit-overflow-scrolling: touch;}
-        .slider-item {scroll-snap-align: center;}
-        .glass-halo {background: rgba(255, 255, 255, 0.25); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.18); box-shadow: 0 0 20px rgba(255, 255, 255, 0.2); transition: all 0.3s ease-in-out;}
-        .glass-halo:hover {background: rgba(255, 255, 255, 0.4); box-shadow: 0 0 25px rgba(255, 255, 255, 0.3); transform: translateY(-4px);}
-        
-        .profile-image-border {
-            border: 4px solid rgba(255, 255, 255, 0.4); 
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+        /* استایل برای دکمه‌های کاملاً فلت */
+        .button-style {
+            background-color: #FAF6EB; /* رنگ دکمه‌ها (کرم بسیار روشن) */
+            color: #5D4037;
+            transition: all 0.2s ease-in-out;
+            box-shadow: none; /* حذف کامل سایه */
+        }
+        .button-style:hover {
+            background-color: #ffffff;
+            transform: translateY(-2px); /* حفظ افکت هاور */
         }
 
-        /* --- Utility Classes (Generated from Tailwind) --- */
-        .absolute {position: absolute;}
-        .relative {position: relative;}
-        .left-2 {left: 0.5rem;}
-        .right-2 {right: 0.5rem;}
-        .top-1\/2 {top: 50%;}
-        .-translate-y-1\/2 {transform: translateY(-50%);}
-        .mb-3 {margin-bottom: 0.75rem;}
-        .mb-4 {margin-bottom: 1rem;}
-        .mb-6 {margin-bottom: 1.5rem;}
-        .mb-8 {margin-bottom: 2rem;}
-        .mb-12 {margin-bottom: 3rem;}
-        .mt-4 {margin-top: 1rem;}
-        .mx-auto {margin-left: auto; margin-right: auto;}
-        .flex {display: flex;}
-        .min-h-screen {min-height: 100vh;}
-        .w-full {width: 100%;}
-        .w-32 {width: 8rem;}
-        .h-32 {height: 8rem;}
-        .max-w-md {max-width: 28rem;}
-        .flex-col {flex-direction: column;}
-        .items-center {align-items: center;}
-        .justify-center {justify-content: center;}
-        .space-y-4 > :not([hidden]) ~ :not([hidden]) {margin-top: 1rem;}
-        .rounded-full {border-radius: 9999px;}
-        .rounded-xl {border-radius: 0.75rem;}
-        .bg-white\/60 {background-color: rgba(255, 255, 255, 0.6);}
-        .object-cover {object-fit: cover;}
-        .p-2 {padding: 0.5rem;}
-        .p-4 {padding: 1rem;}
-        .p-6 {padding: 1.5rem;}
-        .py-4 {padding-top: 1rem; padding-bottom: 1rem;}
-        .py-12 {padding-top: 3rem; padding-bottom: 3rem;}
-        .px-4 {padding-left: 1rem; padding-right: 1rem;}
-        .px-6 {padding-left: 1.5rem; padding-right: 1.5rem;}
-        .text-center {text-align: center;}
-        .text-base {font-size: 1rem; line-height: 1.5rem;}
-        .text-xl {font-size: 1.25rem; line-height: 1.75rem;}
-        .text-2xl {font-size: 1.5rem; line-height: 2rem;}
-        .text-4xl {font-size: 2.25rem; line-height: 2.5rem;}
-        .font-bold {font-weight: 700;}
-        .leading-relaxed {line-height: 1.625;}
-        .text-stone-700 {color: #44403c;}
-        .text-stone-800 {color: #292524;}
-        .text-orange-800 {color: #9a3412;}
-        .text-orange-600 {color: #ea580c;}
-        .hover\:text-green-600:hover {color: #16a34a;}
-        .hover\:text-orange-500:hover {color: #f97316;}
-        .hover\:text-sky-500:hover {color: #0ea5e9;}
-        .hover\:text-pink-500:hover {color: #ec4899;}
-        .hover\:text-orange-600:hover {color: #ea580c;}
-        .hover\:bg-white\/80:hover {background-color: rgba(255, 255, 255, 0.8);}
-        .backdrop-blur-sm {backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);}
-        .transition {transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter; backdrop-filter: blur(0); transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms;}
-        .overflow-x-auto {overflow-x: auto;}
-        .flex-shrink-0 {flex-shrink: 0;}
-        .snap-x {scroll-snap-type: x var(--tw-scroll-snap-strictness);}
-        .snap-mandatory {--tw-scroll-snap-strictness: mandatory;}
-        .snap-center {scroll-snap-align: center;}
-        .container {width: 100%;}
-        @media (min-width: 640px) {.container {max-width: 640px;}}
-        @media (min-width: 768px) {.container {max-width: 768px;}}
-        @media (min-width: 1024px) {.container {max-width: 1024px;}}
-        @media (min-width: 1280px) {.container {max-width: 1280px;}}
-        @media (min-width: 1536px) {.container {max-width: 1536px;}}
+        .social-icon:hover {
+            color: #CD5C08; /* رنگ هاور آیکون‌ها (نارنجی) */
+        }
     </style>
 </head>
-<body>
+<body class="min-h-screen">
 
-<div class="container mx-auto p-4 flex flex-col items-center justify-center min-h-screen">
-    <main class="w-full max-w-md mx-auto text-center py-12">
-        <!-- بخش پروفایل -->
-        <header class="flex flex-col items-center mb-8">
-            <img src="https://uploadkon.ir/uploads/93f110_25IMG-20250707-092544.jpg"
-                alt="عکس پروفایل" 
-                class="w-32 h-32 rounded-full object-cover profile-image-border mb-4"
-                onerror="this.onerror=null;this.src='https://placehold.co/128x128/cccccc/ffffff?text=Error';"
-            >
-            <h1 class="text-2xl font-bold text-stone-800">خانواده امید فارس</h1>
-            <p class="mt-4 text-base font-bold text-stone-700">باشگاه رشد هنر و اندیشه نوجوان 🧡</p>
-            <p class="mt-4 text-base font-bold text-stone-700 px-4 leading-relaxed">
-                از نوجوان | با نوجوان | برای نوجوان 🌱
-                <br>
-                آموزش، تولید و رویدادهای خلاقانه 🪄
-                <br>
-                مهم اینه که عاشق هنر باشی 💪🏻
-            </p>
+    <div class="max-w-xl mx-auto bg-[#F5E8B7]">
+        
+        <!-- بخش کاور و پروفایل -->
+        <header class="relative mb-20">
+            <!-- کاور رنگی -->
+            <div class="w-full h-28" style="background-color: #CD5C08;"></div>
+
+            <!-- عکس پروفایل -->
+            <div class="absolute top-12 left-1/2 -translate-x-1/2 w-32 h-32 p-1 bg-[#F5E8B7] rounded-full">
+                <img 
+                    src="https://uploadkon.ir/uploads/93f110_25IMG-20250707-092544.jpg"
+                    alt="عکس پروفایل" 
+                    class="w-full h-full rounded-full object-cover"
+                    onerror="this.onerror=null;this.src='https://placehold.co/128x128/cccccc/ffffff?text=Error';"
+                >
+            </div>
         </header>
 
-        <!-- بخش لینک‌ها -->
-        <section class="w-full mb-12">
-            <h2 class="text-xl font-bold text-stone-800 mb-6">صفحات‌مجازی‌مون</h2>
-            <div class="space-y-4">
-                <a href="https://ble.ir/Safhe_design" target="_blank" class="block w-full glass-halo text-stone-800 hover:text-green-600 text-base font-bold py-4 px-6 rounded-xl">
-                    بله
-                </a>
-                <a href="https://eitaa.com/Safhe_design" target="_blank" class="block w-full glass-halo text-stone-800 hover:text-orange-500 text-base font-bold py-4 px-6 rounded-xl">
-                    ایتا
-                </a>
-                <a href="https://t.me/Safhe_design" target="_blank" class="block w-full glass-halo text-stone-800 hover:text-sky-500 text-base font-bold py-4 px-6 rounded-xl">
-                    تلگرام
-                </a>
-                <a href="https://instagram.com/safhe_design" target="_blank" class="block w-full glass-halo text-stone-800 hover:text-pink-500 text-base font-bold py-4 px-6 rounded-xl">
-                    اینستاگرام
-                </a>
-            </div>
-        </section>
+        <!-- بخش اصلی محتوا -->
+        <main class="px-6 pb-12 text-center">
+            
+            <!-- اطلاعات کاربری -->
+            <section class="mb-8 pt-4">
+                <h1 class="text-2xl font-bold text-stone-800">خانواده امید فارس</h1>
+                <p class="mt-2 text-base text-stone-700">باشگاه رشد هنر و اندیشه نوجوان 🧡</p>
+                <p class="mt-4 text-base text-stone-700 px-4 leading-relaxed">
+                    از نوجوان | با نوجوان | برای نوجوان 🌱
+                    <br>
+                    آموزش، تولید و رویدادهای خلاقانه 🪄
+                    <br>
+                    مهم اینه که عاشق هنر باشی 💪🏻
+                </p>
+            </section>
 
-        <!-- بخش جدید پاتوق‌ها -->
-        <section class="w-full mb-12">
-            <h2 class="text-xl font-bold text-stone-800 mb-6">پاتوق‌هامون</h2>
-            <div class="space-y-4">
-                <a href="#" target="_blank" class="block w-full glass-halo text-stone-800 hover:text-orange-600 text-base font-bold py-4 px-6 rounded-xl">
-                    صفحه | پاتوق گرافیک نوجوان
-                </a>
-                <a href="#" target="_blank" class="block w-full glass-halo text-stone-800 hover:text-orange-600 text-base font-bold py-4 px-6 rounded-xl">
-                    آفتاب | پاتوق پادکست نوجوان
-                </a>
-                <a href="#" target="_blank" class="block w-full glass-halo text-stone-800 hover:text-orange-600 text-base font-bold py-4 px-6 rounded-xl">
-                    پرگار | پاتوق شعر نوجوان
-                </a>
-                <a href="#" target="_blank" class="block w-full glass-halo text-stone-800 hover:text-orange-600 text-base font-bold py-4 px-6 rounded-xl">
-                    کلمه | پاتوق نویسندگی نوجوان
-                </a>
-                <a href="#" target="_blank" class="block w-full glass-halo text-stone-800 hover:text-orange-600 text-base font-bold py-4 px-6 rounded-xl">
-                    سینما تربیت
-                </a>
-            </div>
-        </section>
-
-        <!-- بخش آخرین رویدادها (اسلایدر) -->
-        <section class="w-full mb-12">
-            <h2 class="text-xl font-bold text-stone-800 mb-6">آخرین رویدادها</h2>
-            <div class="relative">
-                <div id="slider" class="slider-container flex overflow-x-auto snap-x snap-mandatory rounded-xl">
-                    <img src="https://iili.io/FcmU57a.md.jpg" alt="رویداد ۱" class="slider-item w-full flex-shrink-0 snap-center object-cover">
-                    <img src="https://iili.io/FcmaWJa.md.jpg" alt="رویداد ۲" class="slider-item w-full flex-shrink-0 snap-center object-cover">
-                    <img src="https://iili.io/Fcp2vnV.md.jpg" alt="رویداد ۳" class="slider-item w-full flex-shrink-0 snap-center object-cover">
-                    <img src="https://iili.io/FcyuZga.md.jpg" alt="رویداد ۴" class="slider-item w-full flex-shrink-0 snap-center object-cover">
-                    <img src="https://iili.io/FcylXMQ.md.jpg" alt="رویداد ۵" class="slider-item w-full flex-shrink-0 snap-center object-cover">
+            <!-- آیکون‌های شبکه‌های اجتماعی با لینک‌های جدید -->
+            <section class="mb-10">
+                <div class="flex justify-center items-center space-x-6 space-x-reverse">
+                    <a href="https://instagram.com/omidfamilyfa" target="_blank" class="text-stone-500 social-icon transition-colors">
+                        <i class="ph-bold ph-instagram-logo text-2xl"></i>
+                    </a>
+                    <a href="https://t.me/omidfamilyfa" target="_blank" class="text-stone-500 social-icon transition-colors">
+                        <i class="ph-bold ph-telegram-logo text-2xl"></i>
+                    </a>
+                     <a href="https://eitaa.com/omidfamilyfa" target="_blank" class="text-stone-500 social-icon transition-colors">
+                        <i class="ph-bold ph-paper-plane-right text-2xl"></i>
+                    </a>
+                    <a href="https://ble.ir/omidfamilyfa" target="_blank" class="text-stone-500 social-icon transition-colors">
+                        <i class="ph-bold ph-chats-circle text-2xl"></i>
+                    </a>
                 </div>
-                <button id="prevBtn" class="absolute top-1/2 left-2 -translate-y-1/2 bg-white/60 backdrop-blur-sm rounded-full p-2 text-orange-600 hover:bg-white/80 transition">
-                    <i class="ph ph-caret-left text-2xl"></i>
-                </button>
-                <button id="nextBtn" class="absolute top-1/2 right-2 -translate-y-1/2 bg-white/60 backdrop-blur-sm rounded-full p-2 text-orange-600 hover:bg-white/80 transition">
-                    <i class="ph ph-caret-right text-2xl"></i>
-                </button>
-            </div>
-        </section>
+            </section>
 
-        <!-- بخش موقعیت مکانی -->
-        <footer class="w-full">
-             <h2 class="text-xl font-bold text-stone-800 mb-4">آدرس‌مون</h2>
-             <div class="flex flex-col items-center glass-halo p-6 rounded-xl">
-                 <i class="ph-bold ph-map-pin-line text-4xl text-orange-600 mb-3"></i>
-                 <p class="text-base font-bold text-stone-800">
+            <!-- بخش پاتوق‌ها با لینک جدید -->
+            <section class="w-full mb-12">
+                <h2 class="text-xl font-bold text-stone-800 mb-6">پاتوق‌هامون</h2>
+                <div class="space-y-4">
+                    <a href="https://OmidFamilyFa.github.io/Safhe_Design" target="_blank" class="block w-full button-style font-bold py-4 px-6 rounded-full">
+                        صفحه | پاتوق گرافیک نوجوان
+                    </a>
+                    <a href="https://OmidFamilyFa.github.io/Safhe_Design" target="_blank" class="block w-full button-style font-bold py-4 px-6 rounded-full">
+                        آفتاب | پاتوق پادکست نوجوان
+                    </a>
+                    <a href="https://OmidFamilyFa.github.io/Safhe_Design" target="_blank" class="block w-full button-style font-bold py-4 px-6 rounded-full">
+                        پرگار | پاتوق شعر نوجوان
+                    </a>
+                    <a href="https://OmidFamilyFa.github.io/Safhe_Design" target="_blank" class="block w-full button-style font-bold py-4 px-6 rounded-full">
+                        کلمه | پاتوق نویسندگی نوجوان
+                    </a>
+                    <a href="https://OmidFamilyFa.github.io/Safhe_Design" target="_blank" class="block w-full button-style font-bold py-4 px-6 rounded-full">
+                        سینما تربیت
+                    </a>
+                </div>
+            </section>
+
+            <!-- بخش موقعیت مکانی (بدون باکس و آیکون) -->
+            <footer class="w-full mb-12">
+                 <h2 class="text-xl font-bold text-stone-800 mb-4">آدرس‌مون</h2>
+                 <p class="text-base font-bold text-stone-700 px-4">
                     شیراز، بلوار کریم‌خان زند، خیابان لطفعلی‌خان زند، حوزه هنری، طبقه دوم
                  </p>
-             </div>
-        </footer>
-    </main>
-</div>
-
-<!-- کدهای JavaScript در اینجا قرار می‌گیرند -->
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const slider = document.getElementById('slider');
-        const nextBtn = document.getElementById('nextBtn');
-        const prevBtn = document.getElementById('prevBtn');
-        
-        if (!slider || !nextBtn || !prevBtn) return;
-
-        const slides = Array.from(slider.children);
-        const totalSlides = slides.length;
-        if (totalSlides === 0) return;
-
-        let currentSlideIndex = 0;
-        let autoSlideInterval;
-
-        function goToSlide(index) {
-            currentSlideIndex = index;
-            const slideWidth = slider.clientWidth;
-            slider.scrollTo({
-                left: currentSlideIndex * slideWidth,
-                behavior: 'smooth'
-            });
-        }
-
-        function startAutoSlide() {
-            clearInterval(autoSlideInterval);
-            autoSlideInterval = setInterval(() => {
-                const nextIndex = (currentSlideIndex + 1) % totalSlides;
-                goToSlide(nextIndex);
-            }, 5000);
-        }
-
-        nextBtn.addEventListener('click', () => {
-            const nextIndex = (currentSlideIndex + 1) % totalSlides;
-            goToSlide(nextIndex);
-            startAutoSlide();
-        });
-
-        prevBtn.addEventListener('click', () => {
-            const prevIndex = (currentSlideIndex - 1 + totalSlides) % totalSlides;
-            goToSlide(prevIndex);
-            startAutoSlide();
-        });
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const newIndex = slides.indexOf(entry.target);
-                    if (newIndex !== currentSlideIndex) {
-                       currentSlideIndex = newIndex;
-                       startAutoSlide();
-                    }
-                }
-            });
-        }, { threshold: 0.7 });
-
-        slides.forEach(slide => observer.observe(slide));
-
-        window.addEventListener('resize', () => {
-            const slideWidth = slider.clientWidth;
-            slider.scrollTo({
-                left: currentSlideIndex * slideWidth,
-                behavior: 'instant' 
-            });
-        });
-
-        startAutoSlide();
-    });
-</script>
+            </footer>
+        </main>
+    </div>
 
 </body>
 </html>
