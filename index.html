@@ -18,20 +18,27 @@
             color: #5D4037; /* رنگ متن اصلی (قهوه‌ای تیره) */
         }
         
-        /* استایل برای دکمه‌های کاملاً فلت */
         .button-style {
             background-color: #FAF6EB; /* رنگ دکمه‌ها (کرم بسیار روشن) */
             color: #5D4037;
             transition: all 0.2s ease-in-out;
-            box-shadow: none; /* حذف کامل سایه */
+            box-shadow: none;
         }
         .button-style:hover {
             background-color: #ffffff;
-            transform: translateY(-2px); /* حفظ افکت هاور */
+            transform: translateY(-2px);
+        }
+
+        .map-button {
+            background-color: #CD5C08;
+            color: #ffffff;
+        }
+        .map-button:hover {
+            background-color: #b45309;
         }
 
         .social-icon:hover {
-            color: #CD5C08; /* رنگ هاور آیکون‌ها (نارنجی) */
+            color: #CD5C08;
         }
     </style>
 </head>
@@ -71,7 +78,7 @@
                 </p>
             </section>
 
-            <!-- آیکون‌های شبکه‌های اجتماعی با لینک‌های جدید -->
+            <!-- آیکون‌های شبکه‌های اجتماعی -->
             <section class="mb-10">
                 <div class="flex justify-center items-center space-x-6 space-x-reverse">
                     <a href="https://instagram.com/omidfamilyfa" target="_blank" class="text-stone-500 social-icon transition-colors">
@@ -89,7 +96,7 @@
                 </div>
             </section>
 
-            <!-- بخش پاتوق‌ها با لینک جدید -->
+            <!-- بخش پاتوق‌ها -->
             <section class="w-full mb-12">
                 <h2 class="text-xl font-bold text-stone-800 mb-6">پاتوق‌هامون</h2>
                 <div class="space-y-4">
@@ -111,12 +118,29 @@
                 </div>
             </section>
 
-            <!-- بخش موقعیت مکانی (بدون باکس و آیکون) -->
-            <footer class="w-full mb-12">
-                 <h2 class="text-xl font-bold text-stone-800 mb-4">آدرس‌مون</h2>
-                 <p class="text-base font-bold text-stone-700 px-4">
-                    شیراز، بلوار کریم‌خان زند، خیابان لطفعلی‌خان زند، حوزه هنری، طبقه دوم
-                 </p>
+            <!-- بخش موقعیت مکانی با لینک‌های نقشه جدید -->
+            <footer class="w-full mb-12 space-y-8">
+                <h2 class="text-xl font-bold text-stone-800">نشونی‌مون</h2>
+                
+                <!-- آدرس دفتر اداری -->
+                <div class="space-y-3">
+                    <p class="text-base font-bold text-stone-700 px-4 leading-relaxed">
+                       <strong>دفتر اداری:</strong> خیابان لطفعلی‌خان زند، حدفاصل چهارراه خیرات و سه‌راه انوری، حوزه هنری فارس، طبقه دوم.
+                    </p>
+                    <a href="https://nshn.ir/3b7bg415VF7mrv" target="_blank" class="inline-block map-button button-style font-bold py-2 px-5 rounded-full text-sm">
+                        مشاهده در نقشه
+                    </a>
+                </div>
+
+                <!-- آدرس مرکز امید -->
+                <div class="space-y-3">
+                    <p class="text-base font-bold text-stone-700 px-4 leading-relaxed">
+                       <strong>مرکز امید (پاتوق‌ها، کلاس‌ها و کارگاه‌ها):</strong> بلوار فرصت شیرازی، خیابان استاد شهریار، تقاطع اقبال لاهوری، پردیس هنر و اندیشه ره‌آوین، طبقه دوم.
+                    </p>
+                    <a href="https://nshn.ir/977bgjkx5F1OFd" target="_blank" class="inline-block map-button button-style font-bold py-2 px-5 rounded-full text-sm">
+                        مشاهده در نقشه
+                    </a>
+                </div>
             </footer>
         </main>
     </div>
